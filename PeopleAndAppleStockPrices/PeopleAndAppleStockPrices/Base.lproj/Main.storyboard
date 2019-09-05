@@ -93,6 +93,10 @@
                         <viewLayoutGuide key="safeArea" id="o3a-i1-Ise"/>
                     </view>
                     <navigationItem key="navigationItem" id="nGG-8d-nVO"/>
+                    <connections>
+                        <outlet property="contactsSearchBar" destination="0h2-ja-L8h" id="laq-1U-Qus"/>
+                        <outlet property="contactsTableView" destination="A7f-SA-2Ii" id="ri7-VJ-qkH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEi-O1-Ae9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

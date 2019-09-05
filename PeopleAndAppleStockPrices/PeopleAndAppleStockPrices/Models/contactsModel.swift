@@ -14,25 +14,22 @@ enum ContactsJSON: Error {
 }
 
 struct Contacts: Codable {
-    
-    
-    
     let results: [ListInfo]
     
-//    static func getContactsData(from data: Data) -> [ListInfo] {
-//        do {
-//            let contacts = try JSONDecoder().decode(ListInfo.self, from: data)
-//            return contacts.results
-//        } catch {
-//            throw ContactsJSON.decodingError(error)
-//        }
-//    }
-    
+static func getUsers(fron data: Data) -> [ListInfo]{
+        do {
+            let user = try
+                JSONDecoder().decode(Contacts.self, from: data)
+            return user.results
+        } catch let decodeError {
+            fatalError("could not decode info\(decodeError)")
+        }
+    }
 }
 
 struct ListInfo: Codable {
-    let name: [NameWrapper]
-    let location: [LocationWrapper]
+    let name: NameWrapper
+    let location: LocationWrapper
     let email: String
 }
 
@@ -46,3 +43,40 @@ struct LocationWrapper: Codable {
     let city: String
     let state: String
 }
+/*
+ 
+ struct Userinfo: Codable {
+ let results: [InfoWrapper]
+ }
+ 
+ struct InfoWrapper: Codable {
+ let gender: String
+ let name: NameWrapper
+ let location: LocationWrapper
+ let email: String
+ let picture: PictureWrapper
+ }
+ 
+ struct PictureWrapper: Codable {
+ let large: String
+ let medium: String
+ let thumbnail: String
+ }
+ 
+ struct NameWrapper: Codable {
+ let title: String
+ let first: String
+ let last: String
+ 
+ }
+ 
+ 
+ struct LocationWrapper: Codable {
+ let street: String
+ let city: String
+ let state: String
+ let postcode: String
+ 
+ }
+
+ */
