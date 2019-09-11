@@ -17,6 +17,7 @@
 		748B08C62319CE55004DD2EB /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748B08C52319CE55004DD2EB /* StocksViewController.swift */; };
 		748B08C82319D07D004DD2EB /* contactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748B08C72319D07D004DD2EB /* contactsModel.swift */; };
 		748B08CB2319D0DB004DD2EB /* stocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748B08CA2319D0DB004DD2EB /* stocksModel.swift */; };
+		748CF1932321D319006A1201 /* ContactsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748CF1922321D319006A1201 /* ContactsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		748B08C52319CE55004DD2EB /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
 		748B08C72319D07D004DD2EB /* contactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactsModel.swift; sourceTree = "<group>"; };
 		748B08CA2319D0DB004DD2EB /* stocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stocksModel.swift; sourceTree = "<group>"; };
+		748CF1922321D319006A1201 /* ContactsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				748B08C32319CDE2004DD2EB /* ContactsViewController.swift */,
 				577E5BEF21BA8BA10083EB97 /* Main.storyboard */,
+				748CF1922321D319006A1201 /* ContactsDetailViewController.swift */,
 				748B08C92319D089004DD2EB /* Models */,
 				748B08C52319CE55004DD2EB /* StocksViewController.swift */,
 				577E5BFD21BA8BE20083EB97 /* Supporting Files */,
@@ -178,6 +181,7 @@
 			files = (
 				748B08C62319CE55004DD2EB /* StocksViewController.swift in Sources */,
 				577E5BEC21BA8BA10083EB97 /* AppDelegate.swift in Sources */,
+				748CF1932321D319006A1201 /* ContactsDetailViewController.swift in Sources */,
 				748B08C82319D07D004DD2EB /* contactsModel.swift in Sources */,
 				748B08C42319CDE2004DD2EB /* ContactsViewController.swift in Sources */,
 				748B08CB2319D0DB004DD2EB /* stocksModel.swift in Sources */,

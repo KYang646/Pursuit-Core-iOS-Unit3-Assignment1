@@ -14,9 +14,10 @@ enum ContactsJSON: Error {
 }
 
 struct Contacts: Codable {
-    let results: [ListInfo]
+    let results: [InfoWrapper]
     
-static func getUsers(fron data: Data) -> [ListInfo]{
+static func getUsers(fron data: Data) -> [InfoWrapper]{
+    // this function takes in data and returns it into an array of InfoWrapper by decoding it
         do {
             let user = try
                 JSONDecoder().decode(Contacts.self, from: data)
@@ -27,7 +28,7 @@ static func getUsers(fron data: Data) -> [ListInfo]{
     }
 }
 
-struct ListInfo: Codable {
+struct InfoWrapper: Codable {
     let name: NameWrapper
     let location: LocationWrapper
     let email: String
