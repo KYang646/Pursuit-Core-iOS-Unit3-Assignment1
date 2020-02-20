@@ -16,7 +16,7 @@ enum ContactsJSON: Error {
 struct Contacts: Codable {
     let results: [InfoWrapper]
     
-static func getUsers(fron data: Data) -> [InfoWrapper]{
+static func getUsers(from data: Data) -> [InfoWrapper]{
     // this function takes in data and returns it into an array of InfoWrapper by decoding it
         do {
             let user = try
@@ -26,6 +26,22 @@ static func getUsers(fron data: Data) -> [InfoWrapper]{
             fatalError("could not decode info\(decodeError)")
         }
     }
+    
+    static func displayDate(date: String) -> String {
+        let isoDateFormatter = ISO8601DateFormatter()
+        isoDateFormatter.formatOptions = [.withDashSeparatorInDate,
+                                          .withFullDate]
+        isoDateFormatter.timeZone = TimeZone.current
+        let dateFormatter = DateFormatter()
+        guard let dateOfBirth = isoDateFormatter.date(from: date) else{
+            return ""
+        }
+        
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        let dateFormattedString = dateFormatter.string(from: dateOfBirth)
+        return dateFormattedString
+    }
+    
 }
 
 struct InfoWrapper: Codable {
@@ -44,40 +60,5 @@ struct LocationWrapper: Codable {
     let city: String
     let state: String
 }
-/*
- 
- struct Userinfo: Codable {
- let results: [InfoWrapper]
- }
- 
- struct InfoWrapper: Codable {
- let gender: String
- let name: NameWrapper
- let location: LocationWrapper
- let email: String
- let picture: PictureWrapper
- }
- 
- struct PictureWrapper: Codable {
- let large: String
- let medium: String
- let thumbnail: String
- }
- 
- struct NameWrapper: Codable {
- let title: String
- let first: String
- let last: String
- 
- }
- 
- 
- struct LocationWrapper: Codable {
- let street: String
- let city: String
- let state: String
- let postcode: String
- 
- }
 
- */
+

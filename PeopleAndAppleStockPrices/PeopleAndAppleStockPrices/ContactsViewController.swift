@@ -36,7 +36,8 @@ class ContactsViewController: UIViewController {
             // if backspace was hit then it should still return all the data on the tableview
         }
         
-        return contacts.filter{$0.name.first.lowercased().contains(searchString1.lowercased())}
+        return contacts.filter{$0.name.first.lowercased().contains(searchString1.lowercased())}.sorted{$0.name.first.lowercased() < $1.name.first.lowercased()}
+        // this filters the contacts by the search input and then sorts it alphabetically
     }
     
     
@@ -69,10 +70,11 @@ class ContactsViewController: UIViewController {
             let data = try // it tries to convert what is in the URL into data
                 Data(contentsOf: url)
             // we are passing in data to getUsers function
-            let userJSON = Contacts.getUsers(fron: data)
+            let userJSON = Contacts.getUsers(from: data)
             
             // if this function is successful then it returns the decoded data into 'contacts' which is an array of Data from JSON
-            contacts = userJSON
+            contacts = userJSON.sorted{$0.name.first.lowercased() < $1.name.first.lowercased()}
+            // and then sorts the data alphabetically
         }
         catch {
             print(error)

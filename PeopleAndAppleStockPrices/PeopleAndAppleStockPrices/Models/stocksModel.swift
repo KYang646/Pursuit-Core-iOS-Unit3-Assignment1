@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct ApplStockInfo: Decodable{
+    //MARK: Properties
+    var date: String
+    var open: Double
+    var close: Double
+    var label: String
+    var volume: Int
+}
