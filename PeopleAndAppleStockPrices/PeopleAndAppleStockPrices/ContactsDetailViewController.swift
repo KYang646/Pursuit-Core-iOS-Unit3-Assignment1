@@ -21,6 +21,8 @@ class ContactsDetailViewController: UIViewController {
    // var userInformation: InfoWrapper!
     // let results: [ListInfo]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,14 +31,14 @@ class ContactsDetailViewController: UIViewController {
     
     
     private func setUp(){
-        guard let curUser = currentUser else {
+        guard let selectedUser = contacts else {
             print("Could not obtain an instance of user")
             return
         }
 
-        nameLabel.text = "Name: \(contacts.name.first.capitalized)" + " " + "\(contacts.name.last.capitalized)"
-        emailLabel.text = "Email: \(contacts.email)"
-        emailLabel.text = "Date of Birth: \(UserInfo.displayDate(date: contacts.dob.components(separatedBy: " ").first!))"
+        nameLabel.text = "Name: \(selectedUser.name.first.capitalized)" + " " + "\(selectedUser.name.last.capitalized)"
+        emailLabel.text = "Email: \(selectedUser.email)"
+        cityLabel.text = "City: \(selectedUser.location.city)"
 
     }
     

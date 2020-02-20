@@ -36,6 +36,21 @@
             </objects>
             <point key="canvasLocation" x="1484.057971014493" y="527.67857142857144"/>
         </scene>
+        <!--Detail Stocks View Controller-->
+        <scene sceneID="pza-92-pyV">
+            <objects>
+                <viewController id="bWe-7Y-DwM" customClass="DetailStocksViewController" customModule="PeopleAndAppleStockPrices" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ILH-qN-tKA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KsR-Ru-dTp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5r-y7-cMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352" y="530"/>
+        </scene>
         <!--Contacts View Controller-->
         <scene sceneID="kp2-zf-Wf8">
             <objects>

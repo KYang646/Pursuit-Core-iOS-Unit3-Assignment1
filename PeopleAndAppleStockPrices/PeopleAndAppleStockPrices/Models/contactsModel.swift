@@ -27,22 +27,10 @@ static func getUsers(from data: Data) -> [InfoWrapper]{
         }
     }
     
-    static func displayDate(date: String) -> String {
-        let isoDateFormatter = ISO8601DateFormatter()
-        isoDateFormatter.formatOptions = [.withDashSeparatorInDate,
-                                          .withFullDate]
-        isoDateFormatter.timeZone = TimeZone.current
-        let dateFormatter = DateFormatter()
-        guard let dateOfBirth = isoDateFormatter.date(from: date) else{
-            return ""
-        }
-        
-        dateFormatter.dateFormat = "MMMM dd, yyyy"
-        let dateFormattedString = dateFormatter.string(from: dateOfBirth)
-        return dateFormattedString
-    }
-    
 }
+    
+    
+
 
 struct InfoWrapper: Codable {
     let name: NameWrapper
@@ -60,5 +48,6 @@ struct LocationWrapper: Codable {
     let city: String
     let state: String
 }
+
 
 
