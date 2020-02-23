@@ -53,6 +53,7 @@ class ContactsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = contactsTableView.indexPathForSelectedRow,
             let ContactsDetailViewController = segue.destination as? ContactsDetailViewController else { fatalError("missing indexPath, ContactsDetailViewController") }
+        
         let user = filteredContacts[indexPath.row]
         ContactsDetailViewController.contacts = user
     }

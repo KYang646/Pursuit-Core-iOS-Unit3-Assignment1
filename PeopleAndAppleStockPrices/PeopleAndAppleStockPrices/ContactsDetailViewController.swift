@@ -25,7 +25,7 @@ class ContactsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUp()
         
     }
     
@@ -36,9 +36,9 @@ class ContactsDetailViewController: UIViewController {
             return
         }
 
-        nameLabel.text = "Name: \(selectedUser.name.first.capitalized)" + " " + "\(selectedUser.name.last.capitalized)"
-        emailLabel.text = "Email: \(selectedUser.email)"
-        cityLabel.text = "City: \(selectedUser.location.city)"
+        nameLabel.text = "\(selectedUser.name.first.capitalized)" + " " + "\(selectedUser.name.last.capitalized)"
+        emailLabel.text = selectedUser.email
+        cityLabel.text = selectedUser.location.city
 
     }
     

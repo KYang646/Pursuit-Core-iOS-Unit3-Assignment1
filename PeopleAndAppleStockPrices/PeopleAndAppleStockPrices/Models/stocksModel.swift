@@ -65,8 +65,8 @@ extension ApplStockInfo{
     
     static func makeMeADate(using date: String) -> Date {
         let isoDateFormatter = ISO8601DateFormatter()
-        isoDateFormatter.formatOptions = [.withDashSeparatorInDate,
-                                          .withFullDate]
+        isoDateFormatter.formatOptions = [.withDashSeparatorInDate]
+                                         // .withFullDate]
         guard let returnDate = isoDateFormatter.date(from: date) else {
             return Date()
         }
