@@ -72,6 +72,11 @@ extension ApplStockInfo{
         }
         return returnDate
     }
+    static func makeMeADate2(using date: String) -> Date {
+        let beforeDateFormatter = DateFormatter()
+        beforeDateFormatter.dateFormat = "yyyy-MM-dd"
+       return beforeDateFormatter.date(from: date)!
+    }
     
     static func makeMeAStringFromDate(using date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -81,7 +86,7 @@ extension ApplStockInfo{
     
     static func makeMeAStringFromDateWithDay(using date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, YYYY"
+        dateFormatter.dateFormat = "MMMM d, yyyy"
         return dateFormatter.string(from: date)
     }
     

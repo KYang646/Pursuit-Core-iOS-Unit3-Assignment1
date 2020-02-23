@@ -17,15 +17,17 @@ class DetailStocksViewController: UIViewController{
     @IBOutlet weak var closePriceLabel: UILabel!
     
     // MARK: Properties
-    var currentStockInfo: ApplStockInfo?{
-        didSet{
-            setUp()
-        }
-    }
+    var currentStockInfo: ApplStockInfo?
+//    {
+//        didSet{
+//            setUp()
+//        }
+//    }
     
     // MARK: Lifecycle Methods
     override func viewDidLoad(){
         super.viewDidLoad()
+        setUp()
     }
     
     // MARK: Helper Methods
@@ -33,9 +35,9 @@ class DetailStocksViewController: UIViewController{
         guard let unwrappedStockInfo = currentStockInfo else {
             return
         }
-        let date = ApplStockInfo.makeMeADate(using: unwrappedStockInfo.date)
+        //let date = ApplStockInfo.makeMeADate2(using: unwrappedStockInfo.date)
         
-        dateLabel.text = ApplStockInfo.makeMeAStringFromDateWithDay(using: date )
+        dateLabel.text = ApplStockInfo.makeMeAStringFromDateWithDay(using: ApplStockInfo.makeMeADate2(using: unwrappedStockInfo.date) )
         openPriceLabel.text = "Open: \(String(format: "%.2f", unwrappedStockInfo.open))"
         closePriceLabel.text = "Close: \(String(format: "%.2f", unwrappedStockInfo.close))"
         

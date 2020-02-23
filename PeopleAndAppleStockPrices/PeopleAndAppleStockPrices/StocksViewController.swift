@@ -61,12 +61,24 @@ extension StocksViewController: UITableViewDataSource {
 }
 
 // MARK: tableView Delegate Methods
-extension StocksViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = DetailStocksViewController()
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.currentStockInfo = stockMatrix[indexPath.section][indexPath.row]
-        navigationController?.pushViewController(nextVC, animated: true)
-        present(nextVC, animated: true, completion: nil)
+//extension StocksViewController: UITableViewDelegate{
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let nextVC = DetailStocksViewController()
+//        nextVC.modalPresentationStyle = .fullScreen
+//        nextVC.currentStockInfo = stockMatrix[indexPath.section][indexPath.row]
+//        navigationController?.pushViewController(nextVC, animated: true)
+//        //present(nextVC, animated: true, completion: nil)
+//    }
+//}
+
+// MARK:
+
+extension StocksViewController: UITableViewDelegate {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = stocksTableView.indexPathForSelectedRow,
+            let sDVC = segue.destination as? DetailStocksViewController else { fatalError("missing indexPath, ContactsDetailViewController") }
+        
+        let stockDetail = stockMatrix[indexPath.section][indexPath.row]
+        sDVC.currentStockInfo = stockDetail
     }
 }

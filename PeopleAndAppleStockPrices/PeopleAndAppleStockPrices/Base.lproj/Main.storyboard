@@ -27,6 +27,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bWe-7Y-DwM" kind="show" identifier="stockSegue" id="Vng-D1-tqK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -86,9 +89,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="KsR-Ru-dTp"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yzi-Y4-yIk"/>
                     <connections>
                         <outlet property="closePriceLabel" destination="iYp-as-Wft" id="Ds1-lg-8zL"/>
-                        <outlet property="dateLabel" destination="XnR-Cg-7SR" id="Qtq-ld-oEz"/>
+                        <outlet property="dateLabel" destination="XnR-Cg-7SR" id="v1n-nm-tRb"/>
                         <outlet property="imageView" destination="dDk-rb-xG2" id="rKv-kX-I3b"/>
                         <outlet property="openPriceLabel" destination="bxr-nX-LWr" id="GOZ-1p-0cn"/>
                     </connections>
